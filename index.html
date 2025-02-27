@@ -29,10 +29,7 @@
 
         Object.keys(StudentData).sort().forEach((x) => targetSelect0El.innerHTML += `<label><input type="radio" name="targetSelect0" value="${x}" checked>${x}</label>`)
         Object.keys(StudentData).sort().forEach((x) => targetSelect1El.innerHTML += `<label><input type="checkbox" class="targetSelect1" value="${x}">${x}</label>`)
-        // targetSelect0El.innerHTML = "<option>" + Object.keys(StudentData).sort().join("</option>\n<option>") + "</option>"
-        // targetSelect1El.innerHTML = "<option>" + Object.keys(StudentData).sort().join("</option>\n<option>") + "</option>"
-        // TableDivEl.innerHTML = makeTable(0, ["이홍균", "김지환"]);
-
+        
         window.updateInput = function updateInput() {
             mode = ModeSelectEl.value
             if(mode == 0) {
