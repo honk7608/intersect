@@ -5,19 +5,21 @@
 }
 
 body {
-    display: flex;
-    align-content: center;
-    justify-content: center;
+    display: grid;
+    grid-template-areas: 
+        "table control"
+        "footer footer";
 
     --tw: 80vw;
     height: 100vh;
-    overflow-y: hidden;
+    overflow-y: scroll;
     padding: 0;
     margin: 0;
-    position: relative;
 }
 
 div#table {
+    grid-area: table;
+    width: 8fr;
     height: 100vh;
     overflow-y: scroll;
 }
@@ -27,9 +29,8 @@ div#table::-webkit-scrollbar, div#targetSelect0::-webkit-scrollbar, div#targetSe
 }
 
 div#table > table {
-    width: var(--tw);
     border-collapse: collapse;
-    
+    width: 100%;
 
     th {
         background-color: #B4D6FE;
@@ -66,10 +67,8 @@ div#table > table {
     }
     td.emptyTd {
         background-color: white;
-        position: relative;
         .intersect {
             display: none;
-            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
@@ -91,8 +90,9 @@ div#table > table {
 }
 
 div#control {
+    grid-area: control;
     max-height: 100vh;
-    position: sticky;
+    width: 2fr;
     top: 0;
 }
 
@@ -128,4 +128,9 @@ div#control div#targetSelect0,div#targetSelect1 {
     label:has(input:checked) {
         background-color: rgb(155, 255, 144);
     }
+}
+
+footer {
+    grid-area: footer;
+    padding: 2vw;
 }
