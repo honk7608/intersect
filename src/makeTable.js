@@ -64,6 +64,8 @@ function makeTable(mode, target_students) {
                     intersect = SubjectData[thisdata.name][thisdata.classnum].students
                     if (StudentData[target_students[0]][dayNum][timeNum+1] && thisdata.name == StudentData[target_students[0]][dayNum][timeNum+1].name) isCons[dayNum] = true
                 }
+                if(target_students[0] == "이청균" && dayNum == 0 && timeNum == 1) 
+                    intersect = ['<a href="https://honk7608.github.io/quizWeb/">과제: 1000단어 외우기</a>']
                 TableHTML += `<td class='subjectTd ${td_class_name}' rowspan=${isCons[dayNum] ? 2 : 1}><div class="cell">
                     <div class="subject_name">${subject_name}</div>
                     <div class="intersect">${intersect.sort().join(", ")}</div>
