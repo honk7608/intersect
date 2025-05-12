@@ -79,8 +79,6 @@ function makeTable(mode, target_students) {
                     }
                 }
                 if(!flag) {subject_name = ""}
-                if(target_students[0] == "이청균" && dayNum == 0 && timeNum == 1) 
-                    intersect = ['<a href="https://honk7608.github.io/quizWeb/">과제: 1000단어 외우기</a>']
                 TableHTML += `<td class="subjectTd ${flag ? "isGood" : "emptyTd isBad"}"><div class="cell">
                     <div class="subject_name">${subject_name}</div>
                     <div class="intersect"></div>
