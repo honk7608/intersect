@@ -28,7 +28,7 @@
         let targetSelect1El = document.getElementById("targetSelect1");
 
         Object.keys(StudentData).sort().forEach((x) => targetSelect0El.innerHTML += `<label><input type="radio" name="targetSelect0" value="${x}" checked>${x}</label>`)
-        Object.keys(StudentData).sort().forEach((x) => targetSelect1El.innerHTML += `<label><input type="checkbox" class="targetSelect1" value="${x}">${x}</label>`)
+        Object.keys(StudentData).sort().forEach((x) => targetSelect1El.innerHTML += `<label><input type="checkbox" class="targetSelect1" value="${x}">${x}${x=="이홍균"?"<!-- <a href='./lcg.html'>색 반전</a> -->":""}</label>`)
         
         window.updateInput = function updateInput() {
             mode = ModeSelectEl.value
@@ -43,7 +43,6 @@
                 targetSelect1El.style.display = "inline-block"
             }
             TableDivEl.innerHTML = makeTable(mode, target_students);
-            console.log(target_students);
         }
 
         updateInput()
